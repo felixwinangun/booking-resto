@@ -1,0 +1,47 @@
+[
+    {
+        "first_name": "bambank",
+        "last_name": "kembank",
+        "username": "bambank",
+        "password": "bambank",
+        "email": "bambank@gmail.com",
+        "phone_number": "08123456789",
+        "role": "admin"
+    }, 
+    {
+        "first_name": "jamal",
+        "last_name": "udin",
+        "username": "jamal",
+        "password": "jamal",
+        "email": "jamal@gmail.com",
+        "phone_number": "08123456789",
+        "role": "admin"
+    },
+    {
+        "first_name": "amin",
+        "last_name": "surimin",
+        "username": "amin",
+        "password": "amin",
+        "email": "amin@gmail.com",
+        "phone_number": "08123456789",
+        "role": "user"
+    },
+    {
+        "first_name": "bunga",
+        "last_name": "mawar",
+        "username": "bunga",
+        "password": "bunga",
+        "email": "bunga@gmail.com",
+        "phone_number": "08123456789",
+        "role": "user"
+    },
+    {
+        "first_name": "dewa",
+        "last_name": "api",
+        "username": "dewa",
+        "password": "dewa",
+        "email": "dewa@gmail.com",
+        "phone_number": "08123456789",
+        "role": "user"
+    }
+]

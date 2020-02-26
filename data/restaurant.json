@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Wing Heng",
+        "address": "Pluit",
+        "phone_number": "08123456789",
+        "open_hour": "24 hours"
+    },
+    {
+        "name": "Ichiro",
+        "address": "BSD",
+        "phone_number": "08123456789",
+        "open_hour": "10 till 22"
+    },
+    {
+        "name": "Hokben",
+        "address": "Jakarta",
+        "phone_number": "08123456789",
+        "open_hour": "10 till 22"
+    },
+    {
+        "name": "Mulia",
+        "address": "Senayan",
+        "phone_number": "08123456789",
+        "open_hour": "17 till 24"
+    }
+]
