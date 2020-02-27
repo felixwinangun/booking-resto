@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Resto</title>
+</head>
+<body>
+    <table class="table" border="1">
+            <tr>
+                <td rowspan="2">Nama Resto</td>
+                <td colspan="2">Status</td>
+                <td rowspan="2">Tanggal Booking</td>
+                <td rowspan="2">Actions</td>
+            </tr>
+
+            <tr>
+                <td> Akan Datang </td>
+                <td> Telah Berlalu </td>
+            </tr>
+
+            <!-- Loop Here -->
+            <tr>
+                <td> <!-- Patok Ayam Nama Resto --> </td>
+                <td> <!-- Patok Ayam Akan Datang (Kondisi checked) --> </td>
+                <td> <!-- Patok Ayam Telah Berlalu (Kondisi checked) --> </td>
+                <td> <!-- Patok Ayam Tanggal Booking --> </td>
+                <td> <!-- Edit Sesuai Id || Cancel Sesuai Id --> </td>
+            </tr>
+    </table>
+    <br><br>
+    <label for="">Booking Resto</label>
+    <form method="POST" action="/booking">
+        <div>
+          <label for="date">Tanggal Pesanan</label> <br>
+          <input type="date" name="date">
+        </div>
+        <div>
+          <label for="name">Jumlah Orang</label> <br>
+          <input type="text" name="lastName" placeholder="Jumlah Orang">
+        </div>
+        <br>
+        <button type="submit" value="Add">Save</button>
+    </form>
+</body>
+</html>
