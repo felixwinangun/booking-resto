@@ -1,6 +1,7 @@
 const { Restaurant } = require('../models/');
 const { UserRestaurant } = require('../models/');
 const session = require('../helpers/session');
+const getTime = require('../helpers/getTime')
 const { Op } = require("sequelize");
 
 class Controller {
@@ -43,7 +44,7 @@ class Controller {
             return Restaurant.findByPk(restaurantId)
         })
         .then(result => {
-            res.render("restaurant-book", { data: result, rating:avg.toFixed(2) });
+            res.render("restaurant-book", { data: result, rating:avg.toFixed(2),getTime});
         })
         .catch(e => res.send(e.message));
     }
