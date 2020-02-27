@@ -3,7 +3,7 @@ const router = require('./routes');
 const express = require('express');
 const session = require('express-session');
 const app = express();
-const PORT = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
@@ -15,4 +15,4 @@ app.use(session({
 }));
 app.use(router);
 
-app.listen(PORT, () => console.log("booking-resto is listening to", PORT))
+app.listen(port, () => console.log("booking-resto is listening to", port))
