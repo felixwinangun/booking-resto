@@ -1,4 +1,4 @@
-<%- include("partials/header") %>
+<%- include("partials/header-not-login") %>
 
 <% if(message) { %>
     <% if(success) { %> 
@@ -12,7 +12,7 @@
     <% } %> 
 <% } %> 
 
-<div>
+<div class="div-form">
     <form method="POST" action="/register">
         <div class="form-group">
             <label for="first_name">First Name</label>

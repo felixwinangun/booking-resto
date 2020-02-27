@@ -1,20 +1,46 @@
 <%- include("partials/header") %> 
-<div>
+<div class="div-table table-xl">
     <table class="table table-hover">
         <thead>
             <tr>
+                <th scope="col">No</th>
                 <th scope="col">Resto Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Reservation Date</th>
+                <th scope="col">People</th>
+                <th scope="col">Table No</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
             <% if(data.length) { %>
                 <% for(let i in data) { %> 
                     <tr>
+                        <td><%= +i + 1 %> </td>
                         <td><%= data[i].Restaurant.name %> </td>
                         <td><%= data[i].Restaurant.address %> </td>
                         <td><%= data[i].reservation_date %> </td>
+                        <td><%= data[i].person %></td>
+                        <td><%= data[i].table_no %></td>
+                        <td><%= data[i].status %></td>
+                        
+                        <td>
+                            <% if(data[i].reservation_date > new Date() && data[i].status == "Waiting for confirmation") { %> 
+                                <a class="btn btn-danger" href="/user/book/cancel/<%= data[i].id %>">
+                                    <i class="far fa-times-circle"></i> Cancel
+                                </a> 
+                            <% } %> 
+                            <% if(data[i].status == "Approved") { %> 
+                                <% if(!data[i].rating) { %> 
+                                    <a class="btn btn-success" href="/user/book/rate/<%= data[i].id %>">
+                                        <i class="far fa-smile"></i> Rate
+                                    </a> 
+                                <% } else { %> 
+                                    Thank You! <i class="far fa-smile"></i>
+                                <% } %> 
+                            <% } %> 
+                        </td>
                     </tr>
                 <% } %> 
             <% } %>

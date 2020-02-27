@@ -1,6 +1,6 @@
-<%- include("partials/header") %> 
+<%- include("partials/header-not-login") %> 
 
-<div>
+<div class="div-form">
     <form method="POST" action="/login">
         <div class="form-group">
             <label for="username">Username</label>
@@ -12,7 +12,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
-    <a href="/register">Register</a>
 </div>
 
 <%- include("partials/footer") %> 

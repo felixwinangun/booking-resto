@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+
+<div>
+    <p><h3><%= data.Restaurant.name %></h3></p>
+    <p>Address : <%= data.Restaurant.address %></p> 
+    <p>Phone number : <%= data.Restaurant.phone_number %></p> 
+    <p>Opening hour : <%= data.Restaurant.open_hour %></p> 
+</div>
+
+<div class="div-form">
+    <form method="POST" action="/user/book/rate/<%= data.id %> ">
+        <div class="form-group">
+            <label for="rate">Rate</label>
+            <input type="range" class="form-control-range" id="rate" name="rate" min="1" max="5">
+        </div>
+        <button type="submit" class="btn btn-primary">Rate</button>
+    </form>
+</div>
+
+<%- include("partials/footer") %>
