@@ -29,7 +29,7 @@ class Controller {
 
     static logout(req, res) {
         session.logout(req);
-        res.redirect("/login")
+        res.redirect("/")
     }
 
     static isLogin(req, res, next) {
