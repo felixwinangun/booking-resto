@@ -1,13 +1,14 @@
 <%- include("partials/header") %>
 
 <div>
-    <h3><%= data.name %></h3>
-    <h5><%= data.address %></h5>
-    <h5><%= data.phone_number %></h5>
-    <h5><%= data.open_hour %></h5>
+    <p><h3><%= data.name %></h3></p>
+    <p>Address : <%= data.address %></p> 
+    <p>Phone number : <%= data.phone_number %></p> 
+    <p>Opening hour : <%= data.open_hour %></p> 
+    <p>Rating : <%= rating %></p> 
 </div>
 
-<div>
+<div class="div-form">
     <form method="POST" action="/restaurant/book/<%= data.id %> ">
         <div class="form-group">
             <label for="reservation_date">Reservation Date</label>
@@ -15,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="people" class="col-2 col-form-label">People</label>
-            <input class="form-control" type="number" value="1" id="people">
+            <input class="form-control" type="number" value="1" id="people" name="person">
         </div>
         <button type="submit" class="btn btn-primary">Book</button>
     </form>

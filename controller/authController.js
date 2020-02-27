@@ -1,6 +1,7 @@
 const { User } = require('../models/');
 const isPasswordMatch = require('../helpers/isPasswordMatch');
 const session = require('../helpers/session');
+const isAdmin = require('../helpers/isAdmin');
 
 class Controller {
     static getLogin(req, res) {
@@ -10,7 +11,6 @@ class Controller {
     static login(req, res) {
         let username = req.body.username;
         let password = req.body.password;
-        console.log(username);
         User.findOne({
             where: {
                 username: username
@@ -18,7 +18,8 @@ class Controller {
         })
             .then(result => {
                 if (isPasswordMatch(result, password)) {
-                    session.login(req, result.dataValues.id);
+                    let admin = isAdmin(result);
+                    session.login(req, result.dataValues.id, admin);
                     res.redirect("/restaurant");
                 }
                 else res.redirect("/login");
@@ -32,10 +33,27 @@ class Controller {
     }
 
     static isLogin(req, res, next) {
-        if(session.isLogin(req)){
+        if (session.isLogin(req)) {
             next();
-        } else{
+        } else {
             res.redirect("/login");
+        }
+    }
+
+    static isLoginHome(req, res, next) {
+        // if (session.isLogin(req)) {
+        //     if (session.isAdmin(req)) {
+        //         res.render("home-admin");
+        //     } else {
+        //         next();
+        //     }
+        // } else {
+        //     res.render("partials/header-home")
+        // }
+        if (session.isLogin(req)) {
+            res.redirect("/restaurant")
+        } else {
+            res.render("home")
         }
     }
 
@@ -54,14 +72,28 @@ class Controller {
         }
         User.create(data)
             .then(result => {
-                console.log(result);
                 session.login(req, result.dataValues.id)
                 res.redirect("/restaurant");
             })
             .catch(e => {
-                console.log(e.message);
                 res.render("register", { data: data, message: e.errors[0].message, success: false })
             });
+    }
+
+    static home(req, res) {
+        res.redirect("/restaurant")
+    }
+
+    static homeNotLogin(req, res) {
+        res.render("home")
+    }
+
+    static isAdmin(req, res, next) {
+        if (session.isAdmin(req)) {
+            res.redirect("/admin/confirm")
+        } else {
+            next();
+        }
     }
 }
 

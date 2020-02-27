@@ -1,5 +1,5 @@
 let isPasswordMatch = (obj, pass) => {
-    if(obj.dataValues.password == pass) return true;
+    if (obj.dataValues.password == pass) return true;
     return false;
 }
 

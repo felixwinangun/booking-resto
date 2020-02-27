@@ -1,0 +1,30 @@
+body {
+    background-color: whitesmoke;
+}
+
+.div-main {
+    margin: 20px 50px;
+}
+
+.div-form {
+    width: 20vw;
+    background-color: white;
+    padding: 15px;
+}
+
+.div-table {
+    background-color: white;
+}
+
+.table-large {
+    width: 60vw;
+}
+
+.table-xl {
+    width: 80vw;
+    margin: 20px auto;
+}
+
+.table-small {
+    width: 40vw;
+}

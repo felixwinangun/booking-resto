@@ -1,0 +1,35 @@
+<%- include("partials/header-admin") %> 
+<div class="div-table table-large">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Resto Name</th>
+                <th scope="col">Reservation Date</th>
+                <th scope="col">People</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length) { %>
+                <% for(let i in data) { %> 
+                    <tr>
+                        <td><%= +i + 1 %> </td>
+                        <td><%= data[i].Restaurant.name %> </td>
+                        <td><%= data[i].reservation_date %> </td>
+                        <td><%= data[i].person %></td>
+                        <td>
+                            <a class="btn btn-primary" href="/admin/confirm/approve/<%= data[i].id %>">
+                                <i class="far fa-check-circle"></i> Approve
+                            </a> 
+                            <a class="btn btn-danger" href="/admin/confirm/reject/<%= data[i].id %>">
+                                <i class="far fa-times-circle"></i> Reject
+                            </a> 
+                        </td>
+                    </tr>
+                <% } %> 
+            <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include("partials/footer") %> 
